@@ -1,0 +1,40 @@
+﻿@model Student
+@{
+    ViewBag.Title = "update data student";
+    SelectList deplst = new SelectList(ViewBag.deptlist, "DeptId", "DeptName",Model.Deptid);
+    
+}
+
+
+    <div class="container mt-5">
+        <div class="d-flex justify-content-center">
+            <form method="post" enctype="multipart/form-data" class="form-pink">
+                <h1 style="color:#c71585">Update Student</h1>
+                <div class="mb-3">
+                    <label asp-for="Name" class="form-label" style="color:#c71585"></label>
+                    <input asp-for="Name" class="form-control" id="Name" />
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="Age" class="form-label" style="color:#c71585"></label>
+                    <input asp-for="Age" class="form-control" id="Age" />
+                    <span asp-validation-for="Age" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="Email" class="form-label" style="color:#c71585"></label>
+                    <input asp-for="Email" class="form-control" id="Email" />
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="Deptid" class="form-label" style="color:#c71585">Department</label>
+                    <select asp-for="Deptid" asp-items="deplst" class="form-control"></select>
+                </div>
+              @*   <div class="mb-3">
+                    <label asp-for="ImageData" class="form-label" style="color:#c71585"></label>
+                    <input asp-for="ImageData" type="file" class="form-control" id="ImageData" />
+                </div> *@
+                <button type="submit" class="btn btn-primary">Edit Student</button>
+            </form>
+        </div>
+    </div>
+   

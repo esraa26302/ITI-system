@@ -1,0 +1,78 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/style.css" type="text/css" />
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #ff69b4;">
+        <div class="container">
+           
+               
+            
+            <a class="navbar-brand" href="#">
+                <img src="~/image/PngItem_1739020 (1).png" alt="Your Logo" height="40">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    @if (User.IsInRole("Student"))
+                    {
+                       
+                        <li class="nav-item">
+                            <a class="nav-link text-white" asp-area="" asp-controller="Account" asp-action="Profile">
+                                <img src="~/image/profile.png" alt="profile logo" height="30">
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link  text-white" href="/Account/GetStudentCourses">Grades</a>
+
+                        </li>
+
+                    }
+                    <li class="nav-item">
+                        <a class="nav-link  text-white" href="/department">Departments</a>
+                    </li>
+                    @if (User.IsInRole("Admin") || User.IsInRole("Instructor"))
+                    {
+                        <li class="nav-item">
+                            <a class="nav-link  text-white" href="/student">Students</a>
+
+                        </li>
+                    }
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <li class="nav-item">
+                            <a class="nav-link text-white" asp-area="" asp-controller="Account" asp-action="Logout">
+                                <img src="~/image/logout.png" alt="logoutlogo" height="30">
+                            </a>
+                        </li>
+                    }
+                    else
+                    {
+                        <li class="nav-item">
+                            <a class="nav-link text-white" asp-area="" asp-controller="Account" asp-action="Login">
+                                <img src="~/image/clipart3366677.png" alt="login logo" height="30">
+                            </a>
+                        </li>
+                    }
+                   
+                    
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+</head>
+<body>
+    @RenderBody();
+    <script src="~/lib/jquery/dist/jquery.js"></script>
+    <script src="~/lib/jquery-validation/dist/jquery.validate.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
+  
+</body>
+</html>

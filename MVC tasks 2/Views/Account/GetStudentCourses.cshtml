@@ -1,0 +1,22 @@
+﻿@model List<MVC_tasks_2.Models.StudentCourse>
+
+    <div class="container">
+        <h1>Student Courses</h1>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Course Name</th>
+                    <th>Degree</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var courseStudent in Model)
+                {
+                    <tr>
+                        <td>@courseStudent.Course.CourseName</td>
+                        <td>@courseStudent.Degree</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>

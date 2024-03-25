@@ -1,0 +1,152 @@
+﻿.form-pink {
+    background-color: #ffe6f2;
+    border: 1px solid #ff69b4;
+    box-shadow: 1px 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+    .form-pink .btn-primary {
+        background-color: #ff69b4;
+        border-color: #ff69b4;
+       
+    }
+
+
+    
+
+        .form-pink .btn-primary:hover {
+            background-color: #ff3399;
+            border-color: #ff3399;
+        }
+.link-container {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+    .link-container a {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #ff69b4;
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+        transition: background-color 0.3s;
+    }
+
+        .link-container a:hover {
+            background-color: #c71585;
+        }
+
+.btn-danger {
+    background-color: #ff69b4;
+    border-color: #ff69b4;
+}
+
+    .btn-danger:hover {
+        background-color: #c71585;
+        border-color: #c71585;
+    }
+
+
+.btn-details {
+    background: linear-gradient(45deg, #ff69b4, #ff99cc);
+    border-color: #ff69b4;
+    color: white;
+}
+
+    .btn-details:hover {
+        background: linear-gradient(45deg, #ff3399, #ff66cc);
+        border-color: #ff3399;
+    }
+
+.btn-edit {
+    background: linear-gradient(45deg, #ff77a9, #ffbbcc);
+    border-color: #ff77a9;
+    color: white;
+}
+
+    .btn-edit:hover {
+        background: linear-gradient(45deg, #ff5599, #ff99bb);
+        border-color: #ff5599;
+    }
+
+.btn-delete {
+    background: #FF1493;
+    border-color: #ff8fb8;
+    color: white;
+}
+
+    .btn-delete:hover {
+        background: linear-gradient(45deg, #ff6b9c, #ff99b4);
+        border-color: #ff6b9c;
+    }
+.modal-content {
+    background-color: #f8bbd0;
+    color: #c71585;
+}
+
+.modal-header {
+    background-color: #c71585;
+    color: white;
+    border-bottom: 1px solid #c71585;
+}
+
+   
+
+.modal-body {
+    padding: 20px;
+}
+
+.student-image {
+    max-width: 100%;
+    height: auto;
+}
+body {
+    background-color: #ffe6f2;
+    color: #c71585;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+
+form.manage-courses-form {
+    margin: 20px auto;
+    padding: 20px;
+    max-width: 600px;
+    background-color: #fff5f7;
+    border: 1px solid #ff69b4;
+    border-radius: 5px;
+}
+
+
+label.manage-courses-label {
+    font-weight: bold;
+    margin-top: 10px;
+    display: block;
+}
+
+
+select.manage-courses-select {
+    width: 100%;
+    padding: 5px;
+    margin-top: 5px;
+    border: 1px solid #ff69b4;
+    border-radius: 5px;
+    background-color: #fff;
+}
+
+
+input[type="submit"].manage-courses-submit {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #ff69b4;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+ 
+    input[type="submit"].manage-courses-submit:hover {
+        background-color: #c71585;
+    }

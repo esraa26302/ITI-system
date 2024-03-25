@@ -1,0 +1,51 @@
+﻿@model Student
+@{
+    ViewBag.Title = "deatails of student ";
+}
+
+
+
+
+
+    <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title">Student Details</h5>
+
+
+        </div>
+        <div class="modal-body">
+            <div class="row">
+                <div class="col">Name:</div>
+                <div class="col">@Model.Name</div>
+            </div>
+            <div class="row">
+                <div class="col">Age:</div>
+                <div class="col">@Model.Age</div>
+            </div>
+            <div class="row">
+                <div class="col">Email:</div>
+                <div class="col">@Model.Email</div>
+            </div>
+            <div class="row">
+                <div class="col">Department:</div>
+                <div class="col">@Model.Department.DeptName</div>
+            </div>
+            <div class="row">
+                <div class="col">Image:</div>
+                <div class="col">
+                    @if (Model.ImageData != null && Model.ImageMimeType != null)
+                    {
+                        <img src="data:@Model.ImageMimeType;base64,@Convert.ToBase64String(Model.ImageData)" class="student-image" />
+                    }
+                    else
+                    {
+                        <p>No image available</p>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+
+   @*  <script src="~/lib/jquery/dist/jquery.min.js"></script> *@
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+

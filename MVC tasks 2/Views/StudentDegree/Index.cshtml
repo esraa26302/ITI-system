@@ -1,0 +1,39 @@
+﻿@model IEnumerable<StudentCourse>
+
+@{
+ 
+
+    ViewBag.Title = " Degree table";
+
+}
+
+ 
+    <div class="container mt-5">
+        <table class="table table-bordered table-hover" style="background-color: #fff5f7;">
+            <thead style="background-color:#c71585">
+                <tr>
+                    <th style="color : whitesmoke">Student Name</th>
+                    <th style="color : whitesmoke">Course Name </th>
+                    <th style="color : whitesmoke">Degree</t>
+                  
+                </tr>
+            </thead>
+            <tbody>
+               
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@item.Student.Name</td>
+                            <td>@item.Course.CourseName</td>
+                            <td>@item.Degree</td>
+                           
+                        </tr>
+                    }
+                
+            </tbody>
+
+        </table> <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css">
+        <div class="link-container">
+            <a href="/department/index" class="btn btn-success">Back to department </a>
+        </div>
+      

@@ -1,0 +1,72 @@
+﻿@model MVC_tasks_2.Models.ViewModels.LoginViewModel
+
+@{
+    ViewData["Title"] = "login";
+}
+
+
+
+
+<div class="container mt-5">
+    <div class="d-flex justify-content-center">
+        <form asp-action="login" class="form-pink" enctype="multipart/form-data">
+            <h1 style="color:#c71585">Login</h1>
+           
+
+                <div class="mb-3">
+                <label asp-for="Email" class="control-label" style="color:#c71585"></label><span class="text-danger"> * </span>
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+                <div class="mb-3">
+                <label asp-for="Password" class="control-label" style="color:#c71585"></label><span class="text-danger"> * </span> 
+                <input asp-for="Password" id="password" type="password" class="form-control" />
+                <input type="checkbox" onclick="togglePassword()"> Show Password
+                <br />
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+                <div class="text-center  mb-3">
+                    <a asp-action="Register" style="color:deeppink">Are yo have not Account ? Register now </a>
+                </div>
+                <div class="mb-3">
+                    <button type="submit" class="btn btn-primary">login </button>
+               
+            </div>
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+               
+
+        </form>
+    </div>
+</div>
+
+
+
+<script >
+    function togglePassword() {
+        var passwordField = document.getElementById("password");
+        if (passwordField.type === "password") {
+            passwordField.type = "text";
+        } else {
+            passwordField.type = "password";
+        }
+    }
+    // $(document).ready(function () {
+    //     $("#showCoursesButton").click(function () {
+    //         $.ajax({
+    //             url: '/Account/GetStudentCourses',
+    //             type: 'GET',
+    //             success: function (data) {
+    //                 $("#coursesUl").empty();
+    //                 data.forEach(function (item) {
+    //                     $("#coursesUl").append("<li>" + item.courseName + ": " + item.degree + "</li>");
+    //                 });
+    //                 $("#coursesList").show();
+    //             }
+    //         });
+    //     });
+    // });
+</script>
+
+
+
+

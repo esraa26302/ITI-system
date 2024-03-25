@@ -1,0 +1,44 @@
+﻿@model Department
+@{
+  
+    ViewBag.Title = "Show courses";
+}
+
+
+    <div class="container mt-5">
+        <table class="table table-bordered table-hover" style="background-color: #fff5f7;">
+            <thead class="thead-dark">
+                <tr>
+                    <th style="color:#c71585">Course Name </th>
+                    <th style="color:#c71585">Course Duration</th>
+                     @if (User.IsInRole("Instructor"))
+                    
+    {
+                    <th style="color:#c71585">Add Degrees</th>
+    }
+                    
+                   
+
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.courses)
+                {
+                    <tr style="background-color: #f8bbd0;">
+                        <td class="text-white">@item.CourseName</td>
+                        <td class="text-white">@item.Duration</td>
+                    @if (User.IsInRole("Instructor"))
+                    {
+                        <td>
+                            <div class="link-container">
+                                <a asp-action="addStudentDegree" asp-controller="departmentCourse" asp-route-deptid="@Model.DeptId" asp-route-crsId="@item.Id">Add degree</a>
+                            </div>
+                        </td>
+                    }
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+     
+    </div>

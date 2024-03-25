@@ -1,0 +1,44 @@
+﻿@model Student
+@{
+    ViewBag.Title = "Add student ";
+    SelectList deplst = new SelectList(ViewBag.deptlist, "DeptId", "DeptName");
+}
+
+
+<!DOCTYPE html>
+
+
+    <div class="container mt-5">
+        <div class="d-flex justify-content-center">
+            <form method="post" enctype="multipart/form-data" class="form-pink">
+                <h1 style="color:#c71585">Add Student</h1>
+                <div class="mb-3">
+                <label asp-for="Name" class="form-label" style="color:#c71585"></label><span class="text-danger"> * </span>
+                <input asp-for="Name" class="form-control" id="Name" />
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                <label asp-for="Age" class="form-label" style="color:#c71585"></label><span class="text-danger"> * </span>
+                <input asp-for="Age" class="form-control" id="Age" />
+                    <span asp-validation-for="Age" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                <label asp-for="Email" class="form-label" style="color:#c71585"></label><span class="text-danger"> * </span>
+                <input asp-for="Email" class="form-control" id="Email" />
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                <label asp-for="Deptid" class="form-label" style="color:#c71585">Department</label><span class="text-danger"> * </span>
+                <select asp-for="Deptid" asp-items="deplst" class="form-control"></select>
+                  
+                </div>
+              @*   <div class="mb-3">
+                    <label asp-for="ImageData" class="form-label" style="color:#c71585"></label>
+                    <input asp-for="ImageData" type="file" class="form-control" id="ImageData" />
+                </div> *@
+                <button type="submit" class="btn btn-primary">Add Student</button>
+            </form>
+        </div>
+    </div>
+   
+

@@ -1,0 +1,29 @@
+﻿
+@model Department
+@{
+    ViewBag.Title = "add department";
+}
+
+
+
+
+    <div class="container mt-5">
+        <div class="d-flex justify-content-center">
+
+                    <form action="/department/create" method="post" class="form-pink">
+                <h1 style="color:#c71585">Add Department</h1>
+                <div class="mb-3">
+                    <label asp-for="DeptId" class="form-label" style="color:#c71585">Department ID</label>
+                    <input asp-for="DeptId" class="form-control" />
+                    <span asp-validation-for="DeptId" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="DeptName" class="form-label" style="color:#c71585">Department Name</label>
+                    <input asp-for="DeptName"class ="form-control"  />
+                    <span asp-validation-for="DeptName" class="text-danger"></span>
+                </div>
+               
+                <button type="submit" class="btn btn-primary">Add Department </button>
+            </form>
+        </div>
+       

@@ -1,0 +1,26 @@
+﻿@model Department
+@{
+    SelectList courseindept = new SelectList(Model.courses, "Id", "CourseName");
+    SelectList coursenodept = new SelectList(ViewBag.CourseOutDept, "Id", "CourseName");
+}
+@{
+    ViewBag.Title = "Mange courses";
+}
+
+<!DOCTYPE html>
+
+ 
+
+    <form method="post" class="manage-courses-form">
+        <label class="manage-courses-label">Courses in Department @Model.DeptName</label>
+        <select multiple asp-items="courseindept" name="CoursesToRemove" class="manage-courses-select"></select>
+
+        <label class="manage-courses-label">Courses out Department @Model.DeptName</label>
+        <select multiple asp-items="coursenodept" name="CoursesToAdd" class="manage-courses-select"></select>
+
+        <input type="submit" value="Change Courses" class="manage-courses-submit" />
+    </form>
+    
+
+
+

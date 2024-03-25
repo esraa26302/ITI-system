@@ -1,0 +1,102 @@
+﻿@model List<Student>
+@{
+    ViewBag.Title = "student data";
+}
+
+
+    <div class="container mt-5">
+        <table class="table table-bordered table-hover" style="background-color: #fff5f7;">
+            <thead style="background-color:#c71585">
+                <tr>
+                    <th style="color : whitesmoke">ID</th>
+                    <th style="color : whitesmoke">Name</th>
+                    <th style="color : whitesmoke">Age</t>
+                    <th style="color : whitesmoke">Email</th>
+                    <th style="color : whitesmoke">Department</th>
+                    <th style="color : whitesmoke">Operation</th>
+                </tr>
+            </thead>
+            <tbody>
+                @if (Model.Count == 0)
+                {
+                    <tr style="background-color: #f8bbd0;">
+                        <td colspan="6">No data available</td>
+                    </tr>
+                }
+                else
+                {
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@item.Id</td>
+                            <td>@item.Name</td>
+                            <td>@item.Age</td>
+                            <td>@item.Email</td>
+                            <td>@item.Department.DeptName</td>
+                            <td>
+                                <div class="d-inline-block">
+                                    <button type="button" class="btn btn-details" onclick="fun1('@item.Id')">Details</button>
+                                </div>
+                            @if (User.IsInRole("Admin"))
+                            {
+                                <div class="d-inline-block">
+                                    <a asp-action="edit" asp-controller="student" class="btn btn-edit" asp-route-id="@item.Id">Edit</a>
+                                </div>
+                            
+                                <div class="d-inline-block">
+                                    <a href="#" class="btn btn-delete delete-student-link" data-studentid="@item.Id">Delete</a>
+                                </div>
+                                }
+                            </td>
+                        </tr>
+                    }
+                }
+            </tbody>
+        </table>
+        @if (User.IsInRole("Admin"))
+{
+        <div class="link-container">
+            <a href="/student/create" class="btn btn-success">ADD Student</a>
+        </div>
+}
+    </div>
+
+    
+    <div class="modal fade" id="detailsModal" tabindex="-1" role="dialog" aria-labelledby="detailsModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                
+                <div class="modal-body" id="modal-content">
+                   
+                </div>
+            </div>
+        </div>
+    </div>
+    @if (User.IsInRole("Admin"))
+{
+    <div class="modal fade" id="deleteStudentConfirmationModal" tabindex="-1" role="dialog" aria-labelledby="deleteStudentConfirmationModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="deleteStudentConfirmationModalLabel">Delete Student</h5>
+                   
+                </div>
+                <div class="modal-body">
+                    Are you sure you want to delete this student?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                    <a id="deleteStudentLink" href="#" class="btn btn-danger">Delete</a>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    }
+
+   
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+   
+<script src="/js/myjs.js"></script>

@@ -1,0 +1,77 @@
+﻿@model MVC_tasks_2.Models.ViewModels.Registerviewmodel
+
+@{
+    ViewData["Title"] = "Register";
+}
+
+
+
+
+<div class="container mt-5">
+    <div class="d-flex justify-content-center">
+        <form asp-action="Register" class="form-pink" enctype="multipart/form-data">
+            <h1 style="color:#c71585">Register</h1>
+          
+            <div class="mb-3">
+                <label asp-for="FirstName" class="control-label" style="color:#c71585"></label><span class="text-danger"> * </span>
+                <input asp-for="FirstName" class="form-control" />
+                <span asp-validation-for="FirstName" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="secondName" class="control-label" style="color:#c71585"></label><span class="text-danger"> * </span>
+                <input asp-for="secondName" class="form-control" />
+                <span asp-validation-for="secondName" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="Email" class="control-label" style="color:#c71585"></label><span class="text-danger"> * </span>
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="Password" class="control-label" style="color:#c71585"></label><span class="text-danger"> * </span>
+                <input asp-for="Password" id="password" type="password" class="form-control" />
+                <input type="checkbox" onclick="togglePassword()"> Show Password
+                <br />
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="ConfirmPassword" class="control-label" style="color:#c71585"></label><span class="text-danger"> * </span>
+                <input asp-for="ConfirmPassword" id="password" type="password" class="form-control" />
+                <input type="checkbox" onclick="togglePassword()"> Show Password
+                <br />
+                <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+              
+            </div>
+            <div class="mb-3">
+                <label asp-for="Age" class="control-label" style="color:#c71585"></label><span class="text-danger"> * </span>
+                <input asp-for="Age" class="form-control" />
+                <span asp-validation-for="Age" class="text-danger"></span>
+            </div>
+            <div class="text-center  mb-3">
+                <a asp-action="login" style="color:deeppink">You have Alerady Acount?click here to login</a>
+            </div>
+            <div class="mb-3">
+                <label asp-for="ImageFile" class="control-label" style="color:#c71585"></label><span class="text-danger"> * </span>
+                <input asp-for="ImageFile" type="file" class="form-control" />
+                <span asp-validation-for="ImageFile" class="text-danger"></span>
+            </div>
+           
+            <div class="mb-3">
+                <input type="submit" value="Register" class="btn btn-primary" />
+            </div>
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        </form>
+    </div>
+</div>
+<script>
+    function togglePassword() {
+        var passwordField = document.getElementById("password");
+        if (passwordField.type === "password") {
+            passwordField.type = "text";
+        } else {
+            passwordField.type = "password";
+        }
+    }
+</script>
+
+
